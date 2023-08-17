@@ -1,0 +1,254 @@
+<?php include_once("includes/basic_includes.php");?>
+<?php include_once("functions.php"); ?>
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Find Your Perfect Partner - Makemylove
+ | Services :: Make My Love
+</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href='//fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+<!--font-Awesome-->
+<link href="css/font-awesome.css" rel="stylesheet"> 
+<!--font-Awesome-->
+<script>
+$(document).ready(function(){
+    $(".dropdown").hover(            
+        function() {
+            $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
+            $(this).toggleClass('open');        
+        },
+        function() {
+            $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
+            $(this).toggleClass('open');       
+        }
+    );
+});
+</script>
+</head>
+<body>
+<!-- ============================  Navigation Start =========================== -->
+<?php include_once("includes/navigation.php");?>
+<!-- ============================  Navigation End ============================ -->
+
+<!-- hema html convert into php code start   -->
+
+<div class="grid_3">
+  <div class="container">
+   <div class="breadcrumb1">
+     <ul>
+        <a href="index.php"><i class="fa fa-home home_1"></i></a>
+        <span class="divider">&nbsp;|&nbsp;</span>
+        <li class="current-page">Services</li>
+     </ul>
+   </div>
+   <div class="services">
+   	<div class="page_header">
+   	 <h1>Services</h1>
+   	 <h3>There are many variations of passages of Lorem Ipsum available</h3>
+   	 <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+    </div>
+    <div class="services_top">
+<?php
+$serviceItems = array(
+    array("fa-heart-o", "Lorem ipsum dolor", "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire."),
+    array("fa-lemon-o", "Lorem ipsum dolor", "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire."),
+    array("fa-thumbs-o-up", "Lorem ipsum dolor", "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire.")
+);
+
+foreach ($serviceItems as $item) {
+    echo '<div class="col-sm-4 item_content">';
+    echo '<i class="fa ' . $item[0] . ' icon_4"></i>';
+    echo '<h4>' . $item[1] . '</h4>';
+    echo '<p>"' . $item[2] . '</p>';
+    echo '</div>';
+}
+?>
+    	<div class="clearfix"> </div>
+    </div>	
+    <div class="services_top1">
+<?php
+$serviceItems2 = array(
+    array("fa-smile-o", "Lorem ipsum dolor", "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire."),
+    array("fa-wheelchair", "Lorem ipsum dolor", "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire."),
+    array("fa-spinner", "Lorem ipsum dolor", "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire.")
+);
+
+foreach ($serviceItems2 as $item) {
+    echo '<div class="col-sm-4 item_content">';
+    echo '<i class="fa ' . $item[0] . ' icon_4"></i>';
+    echo '<h4>' . $item[1] . '</h4>';
+    echo '<p>"' . $item[2] . '</p>';
+    echo '</div>';
+}
+?>
+    	<div class="clearfix"> </div>
+    </div>
+   </div>
+  </div>
+</div>
+
+
+<!-- hema html convert into php code end -->
+
+
+<div class="grid_3">
+  <div class="container">
+   <div class="breadcrumb1">
+     <ul>
+        <a href="index.php"><i class="fa fa-home home_1"></i></a>
+        <span class="divider">&nbsp;|&nbsp;</span>
+        <li class="current-page">Services</li>
+     </ul>
+   </div>
+   <div class="services">
+   	<div class="page_header">
+   	 <h1>Services</h1>
+   	 <h3>There are many variations of passages of Lorem Ipsum available</h3>
+   	 <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+    </div>
+    <div class="services_top">
+    	<div class="col-sm-4 item_content">
+    		<i class="fa fa-heart-o icon_4"> </i>
+    		<h4>Lorem ipsum dolor</h4>
+    		<p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire.</p>
+    	</div>
+    	<div class="col-sm-4 item_content">
+    		<i class="fa fa-lemon-o icon_4"> </i>
+    		<h4>Lorem ipsum dolor</h4>
+    		<p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire.</p>
+    	</div>
+    	<div class="col-sm-4 item_content">
+    		<i class="fa fa-thumbs-o-up icon_4"> </i>
+    		<h4>Lorem ipsum dolor</h4>
+    		<p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire.</p>
+    	</div>
+    	<div class="clearfix"> </div>
+    </div>	
+    <div class="services_top1">
+    	<div class="col-sm-4 item_content">
+    		<i class="fa fa-smile-o icon_4"> </i>
+    		<h4>Lorem ipsum dolor</h4>
+    		<p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire.</p>
+    	</div>
+    	<div class="col-sm-4 item_content">
+    		<i class="fa fa-wheelchair icon_4"> </i>
+    		<h4>Lorem ipsum dolor</h4>
+    		<p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire.</p>
+    	</div>
+    	<div class="col-sm-4 item_content">
+    		<i class="fa fa-spinner icon_4"> </i>
+    		<h4>Lorem ipsum dolor</h4>
+    		<p>"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire.</p>
+    	</div>
+    	<div class="clearfix"> </div>
+    </div>	
+   </div>
+  </div>
+</div>
+
+
+<!--  hema html code co start-->
+
+
+<div class="about_middle">
+	<div class="container">
+	  <h2>Happy Clients</h2>
+	  <div class="about_middle-grid1">
+<?php
+$testimonials = array(
+    array("a1.jpg", "Eiusmod tempor incididunt", "Aenean nonummy hendrerit mau phasellu porta. Fusce suscipit varius mi sed. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui."),
+    array("a2.jpg", "Sint occaecat", "Aenean nonummy hendrerit mau phasellu porta. Fusce suscipit varius mi sed. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui.")
+);
+
+foreach ($testimonials as $index => $testimonial) {
+    echo '<div class="col-sm-6 testi_grid list-item-' . $index . '">';
+    echo '<blockquote class="testi_grid_blockquote">';
+    echo '<figure class="featured-thumbnail">';
+    echo '<img src="images/' . $testimonial[0] . '" class="img-responsive" alt=""/>';
+    echo '</figure>';
+    echo '<div><a href="#">' . $testimonial[2] . '</a><div class="clearfix"></div></div>';
+    echo '</blockquote>';
+    echo '<small class="testi-meta"><span class="user">' . $testimonial[1] . '</span></small>';
+    echo '</div>';
+}
+?>
+		<div class="clearfix"> </div>
+	  </div>
+	  <div class="about_middle-grid2">
+<?php
+foreach ($testimonials as $index => $testimonial) {
+    echo '<div class="col-sm-6 testi_grid list-item-' . $index . '">';
+    echo '<blockquote class="testi_grid_blockquote">';
+    echo '<figure class="featured-thumbnail">';
+    echo '<img src="images/' . $testimonial[0] . '" class="img-responsive" alt=""/>';
+    echo '</figure>';
+    echo '<div><a href="#">' . $testimonial[2] . '</a><div class="clearfix"></div></div>';
+    echo '</blockquote>';
+    echo '<small class="testi-meta"><span class="user">' . $testimonial[1] . '</span></small>';
+    echo '</div>';
+}
+?>
+		<div class="clearfix"> </div>
+	  </div>
+	</div>
+</div>
+<div class="about_bottom">
+	<div class="container">
+		<h3>Team</h3>
+<?php
+$teamMembers = array(
+    array("a8.jpg", "Perspiciatis", "Lorem ipsum dolor sit amet,"),
+    array("a7.jpg", "Aspernatur", "Lorem ipsum dolor sit amet,"),
+    array("a6.jpg", "Temporibus", "Lorem ipsum dolor sit amet,"),
+    array("a5.jpg", "Serferendis", "Lorem ipsum dolor sit amet,")
+);
+
+foreach ($teamMembers as $index => $member) {
+    echo '<div class="col-md-3 about_grid1">';
+    echo '<ul class="posts-grid our-team">';
+    echo '<li class="list-item-' . $index . '">';
+    echo '<figure class="thumbnail_1 thumbnail">';
+    echo '<a href="#"><img src="images/' . $member[0] . '" class="img-responsive" alt=""/></a>';
+    echo '<div class="post_networks">';
+    echo '<ul>';
+    echo '<li class="network_0"><a href="#" title=""><i class="fa fa-facebook"></i></a></li>';
+    echo '</ul>';
+    echo '</div>';
+    echo '</figure>';
+    echo '<div class="desc">';
+    echo '<h4><a href="#">' . $member[1] . '</a></h4>';
+    echo '<p>' . $member[2] . '</p>';
+    echo '</div>';
+    echo '</li>';
+    echo '</ul>';
+    echo '</div>';
+}
+?>
+	   <div class="clearfix"> </div>
+	</div>
+</div>
+
+
+
+<!--  hema html code co end -->
+
+
+
+
+
+<?php include_once("footer.php");?>
+
+</body>
+</html>	
