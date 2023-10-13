@@ -4,7 +4,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Find Your Perfect Partner - Matrimony | About :: Matrimony
+<title>Find Your Perfect Partner - Makemylove | About :: Make My Love
 </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -51,49 +51,42 @@ $(document).ready(function(){
    </div>
    <div class="about">
    	  <div class="col-md-6 about_left">
-   	  	<img src="images/wed1.jpg" class="img-responsive" alt=""/>
+   	  	<img src="images/web1.jpeg" class="img-responsive" alt=""/>
    	  </div>
    	  <div class="col-md-6 about_right">
    	  	<h1>About us</h1>
-		<br>
-   	<!--  	<h3 class="">Categories</h3>
-	<span class="">Community organisation <br></span>
-    	<br -->
-    			<h3 class="">Contact info</h3>
-    			<ul class="textcls">
-				  <li><i class="fa fa-home mycolred"></i>
-				  <p>Sector 7 Kurukshetra, Haryana</p>
-				<!--  <p>Address</p> -->
-				  </li>
-				  	  <li><i class="fa fa-phone mycolred"></i>
-				  <p>098123 21981</p>
-				  <!--<p>Mobile</p>-->
-				  </li>	  <li><i class="fa fa-envelope mycolred" aria-hidden="true"></i>
-
-				  <p><a href="https://www.facebook.com/vaishyavaibhav/about">vaishyavaibhav1@gmail.com</a></p>
-				 <!-- <p>Email</p>-->
-				  </li>
-				  	
-				  
-			    </ul>
-    			<br>
-    			<h3 class="">Websites and social links</h3>
-	  <ul class="textcls">
-				  <li><i class="fa fa-chain-broken mycolred" aria-hidden="true"></i></i>
-				  <p>http://www.vaishyavaibhav2010.com/</p>
-			
-				   <!-- <p>Website</p>-->
-				  </li>
-				  	
-				  
-			    </ul>
-	  
+   	  	<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+   	  	<div class="accordation">
+		   <div class="jb-accordion-wrapper">
+				<div class="jb-accordion-title">Accordion 1 <button type="button" class="jb-accordion-button" data-toggle="collapse" data-target="#accordion-1-"><i class="fa fa-angle-down"> </i></button></div>
+				<p><!-- /.accordion-title -->
+				</p><div id="accordion-1-" class="jb-accordion-content collapse in" style="height: auto;">
+				<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae...</p>
+				</div>
+				<p><!-- /.collapse --></p>
+			</div>
+			<div class="jb-accordion-wrapper">
+				<div class="jb-accordion-title">Accordion2 <button type="button" class="jb-accordion-button" data-toggle="collapse" data-target="#accordion2-"><i class="fa fa-angle-down"> </i></button></div>
+				<p><!-- /.accordion-title -->
+				</p><div id="accordion2-" class="jb-accordion-content collapse ">
+				<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt </p>
+				</div>
+				<p><!-- /.collapse --></p>
+			</div>
+			<div class="jb-accordion-wrapper">
+				<div class="jb-accordion-title">Accordion3<button type="button" class="jb-accordion-button" data-toggle="collapse" data-target="#accordion3"><i class="fa fa-angle-down"> </i></button></div>
+				<p><!-- /.accordion-title -->
+				</p><div id="accordion3" class="jb-accordion-content collapse ">
+				<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt </p>
+				</div>
+				<p><!-- /.collapse --></p>
+			</div>
+		</div>
    	  </div>
    	  <div class="clearfix"> </div>
    </div>
   </div>
 </div>
 
-
-
-	
+</body>
+</html>	

@@ -1,5 +1,3 @@
-<?php
-session_start();?>
 <?php include_once("functions.php");?>
 <!DOCTYPE HTML>
 <html>
@@ -16,8 +14,8 @@ session_start();?>
 <script src="js/bootstrap.min.js"></script>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
-<link href='https://fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
 <!--font-Awesome-->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!--font-Awesome-->
@@ -50,19 +48,21 @@ $(document).ready(function(){
      </ul>
    </div>
    <div class="services">
-   
-   
-	<?php 
+   <?php 
 	
 	if (isset($_SESSION['error'])) {
     $errorMessage = $_SESSION['error'];
     // Clear the error message from the session after displaying it
     unset($_SESSION['error']);
 }
+
+
+
 //if(isset($_SESSION['error'])){ echo $_SESSION['error']; }
 
 
 	?>
+   
    	  <div class="col-sm-6 login_left">
 	   <form action="auth/auth.php?user=1" method="post">
   	    <div class="form-item form-type-textfield form-item-name">
@@ -73,12 +73,10 @@ $(document).ready(function(){
 	      <label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label>
 	      <input type="password" id="edit-pass" name="password" size="60" maxlength="128" class="form-text required">
 	    </div>
+		<div class="link forget-pass text-left"><a href="forgot-password.php">Forgot password?</a></div>
 	    <div class="form-actions">
 	    	<input type="submit" id="edit-submit" name="op" value="Log in" class="btn_1 submit">
 	    </div>
-		<br>
-		<a href="forgotpassword.php" style="color: #c32143;"><label>Forgot your pasword ? </label></a> 
-		
 	   </form>
 	  </div>
 	  <div class="col-sm-6">
@@ -95,14 +93,8 @@ $(document).ready(function(){
   </div>
 </div>
 
-    <script>
-        <?php
-        if (isset($errorMessage)) {
-            // Use JavaScript to display the error message in an alert
-            echo "alert('$errorMessage');";
-        }
-        ?>
-    </script>
 
 
 
+</body>
+</html>	

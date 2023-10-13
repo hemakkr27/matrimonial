@@ -14,7 +14,6 @@ writepartnerprefs($id);
 ///reading partnerprefs from db
 
 		$sql="SELECT * FROM partnerprefs WHERE custId = $id";
-		
 		$result=mysqlexec($sql);
 		if($result){
 			$row=mysqli_fetch_assoc($result);
@@ -185,9 +184,9 @@ $(document).ready(function(){
 									<td class="day_value closed">
 									<div class="select-block1">
 						                <select name="mothertounge">
-						                    <option value="">Malayalam</option>
-						                    <option value="">Hindi</option> 
-						               		<option value="">English</option> 
+						                    <option value="Malayalam">Malayalam</option>
+						                    <option value="Hindi">Hindi</option> 
+						               		<option value="English">English</option> 
 						                </select>
 								    </div>
 								    </td>
@@ -216,9 +215,9 @@ $(document).ready(function(){
 										<div class="select-block1">
 						                    <select name="country">
 							                    <option value="Not Applicable">Country</option>
-							                    <option value="Hindu">India</option>
-							                    <option value="Christian">China</option>
-							                    <option value="Muslim">UAE</option>
+							                    <option value="India">India</option>
+							                    <option value="China">China</option>
+							                    <option value="UAE">UAE</option>
 						                    </select>
 						                 </div>
 						            </td>
@@ -238,7 +237,6 @@ $(document).ready(function(){
     </div>
   </div>
 </div>
-
 
 
 <!-- FlexSlider -->

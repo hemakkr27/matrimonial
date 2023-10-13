@@ -1,12 +1,14 @@
 <style>
+
 a.brand.textcls {
     color: #fff;
     font-size: 30px;
-    font-weight: bold; 
-	font-family: 'FontAwesome';
+    font-weight: bold;
+    font-family: auto;
 }
 
 </style>
+
 <!-- ============================  Navigation Start =========================== -->
  <div class="navbar navbar-inverse-blue navbar">
     <!--<div class="navbar navbar-inverse-blue navbar-fixed-top">-->
@@ -36,8 +38,9 @@ a.brand.textcls {
 			   </ul>
              </nav>
            </div>
-           <a class="brand textcls" href="index.php">Vaishya Vaibhav
-		   <!--<img src="images/logo.png" alt="logo"> -->
+           <a class="brand textcls" href="index.php">
+		    Vaishya Vabhav
+		   <!-- <img src="images/logo.png" alt="logo"> -->
 		   </a>
            <div class="pull-right">
           	<nav class="navbar nav_bottom" role="navigation">
@@ -58,7 +61,7 @@ a.brand.textcls {
 		            <li><a href="index.php">Home</a></li>
 		            <li><a href="about.php">About</a></li>
 		    		
-					<li class="dropdown1">
+					<li class="dropdown">
 		              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search<span class="caret"></span></a>
 		              <ul class="dropdown-menu" role="menu">
 		                <li><a href="search.php">Regular Search</a></li>

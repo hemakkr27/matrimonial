@@ -1,8 +1,6 @@
-
 <?php include_once("includes/basic_includes.php");?>
 <?php include_once("functions.php"); ?>
 <?php require_once("includes/dbconn.php");?>
-
 <?php
 if(isloggedin()){
  //do nothing stay here
@@ -20,41 +18,82 @@ $result = mysqlexec($sql);
 if($result){
 $row=mysqli_fetch_assoc($result);
 
-	$fname= isset($row['firstname']) ? $row['firstname'] : "";
-	$lname= isset($row['lname']) ? $row['lname'] : "";
-	$sex= isset($row['sex']) ? $row['sex'] : "";
-	$marital_status= isset($row['maritalstatus']) ? $row['maritalstatus'] : "";
-	$dob= isset($row['dateofbirth']) ? $row['dateofbirth'] : "";
-	$religion= isset($row['religion']) ? $row['religion'] : "";
-	$caste= isset($row['caste']) ? $row['caste'] : "";
-	$subcaste= isset($row['subcaste']) ? $row['subcaste'] : "";
-	$country= isset($row['country']) ? $row['country'] : "";
-	$state= isset($row['state']) ? $row['state'] : "";
-	$district= isset($row['district']) ? $row['district'] : "";
-	$age= isset($row['age']) ? $row['age'] : "";
-	$maritalstatus= isset($row['maritalstatus']) ? $row['maritalstatus'] : "";
-	$profileby= isset($row['profilecreatedby']) ? $row['profilecreatedby'] : "";
-	$education= isset($row['education']) ? $row['education'] : "";
-	$edudescr= isset($row['education_sub']) ? $row['education_sub'] : "";
-	$bodytype= isset($row['body_type']) ? $row['body_type'] : "";
-	$physicalstatus= isset($row['physical_status']) ? $row['physical_status'] : "";
-	$drink= isset($row['drink']) ? $row['drink'] : "";
-	$smoke= isset($row['smoke']) ? $row['smoke'] : "";
-	$mothertounge= isset($row['mothertounge']) ? $row['mothertounge'] : "";
-	$bloodgroup= isset($row['blood_group']) ? $row['blood_group'] : "";
-	$weight= isset($row['weight']) ? $row['weight'] : "";
-	$height= isset($row['height']) ? $row['height'] : "";
-	$colour= isset($row['colour']) ? $row['colour'] : "";
-	$diet= isset($row['diet']) ? $row['diet'] : "";
-	$occupation= isset($row['occupation']) ? $row['occupation'] : "";
-	$occupationdescr= isset($row['occupationdescr']) ? $row['occupationdescr'] : "";
-	$fatheroccupation= isset($row['fathers_occupation']) ? $row['fathers_occupation'] : "";
-	$motheroccupation= isset($row['mothers_occupation']) ? $row['mothers_occupation'] : "";
-	$income= isset($row['annual_income']) ? $row['annual_income'] : "";
+//$fname=$row['firstname'];
+	//$lname=$row['lastname'];
+	//$sex=$row['sex'];
+	//$email=$row['email'];
+		// $dob=$row['dateofbirth'];
+	// $religion=$row['religion'];
+	// $caste = $row['caste'];
+		// $subcaste=$row['subcaste'];
+	// $country = $row['country'];
+	// $state=$row['state'];
+	// $district=$row['district'];
+	// $age=$row['age'];
+		// $maritalstatus=$row['maritalstatus'];
+	// $profileby=$row['profilecreatedby'];
+	// $education=$row['education'];
+	// $edudescr=$row['education_sub'];
+		// $bodytype=$row['body_type'];
+	// $physicalstatus=$row['physical_status'];
+	// $drink=$row['drink'];
+	// $smoke=$row['smoke'];
+	// $mothertounge=$row['mothertounge'];
+		// $bloodgroup=$row['blood_group'];
+	// $weight=$row['weight'];
+	// $height=$row['height'];
+	// $colour=$row['colour'];
+		// $diet=$row['diet'];
+	// $occupation=$row['occupation'];
+	// $occupationdescr=$row['occupation_descr'];
+	// $fatheroccupation=$row['fathers_occupation'];
+	// $motheroccupation=$row['mothers_occupation'];
+	// $income=$row['annual_income'];
 	
-	$bros= isset($row['no_bro']) ? $row['no_bro'] : "";
-	$sis= isset($row['no_sis']) ? $row['no_sis'] : "";
-	$aboutme= isset($row['aboutme']) ? $row['aboutme'] : "";
+	// $bros=$row['no_bro'];
+	// $sis=$row['no_sis'];
+	// $aboutme=$row['aboutme'];
+
+ $fname = isset($row['firstname']) ? $row['firstname'] : "";
+ $lname = isset($row['lastname']) ? $row['lastname'] : "";
+ $sex = isset($row['sex']) ? $row['sex'] : "";
+ $email = isset($row['email']) ? $row['email'] : "";
+ $dob = isset($row['dateofbirth']) ? $row['dateofbirth'] : "";
+ $religion = isset($row['religion']) ? $row['religion'] : "";
+ $caste = isset($row['caste']) ? $row['caste'] : "";
+ $subcaste = isset($row['subcaste']) ? $row['subcaste'] : "";
+ $country = isset($row['country']) ? $row['country'] : "";
+ $state = isset($row['state']) ? $row['state'] : "";
+ $district = isset($row['district']) ? $row['district'] : "";
+ $age = isset($row['age']) ? $row['age'] : "";
+ $maritalstatus = isset($row['maritalstatus']) ? $row['maritalstatus'] : "";
+ $profileby = isset($row['profilecreatedby']) ? $row['profilecreatedby'] : "";
+ $education = isset($row['education']) ? $row['education'] : "";
+ $edudescr = isset($row['education_sub']) ? $row['education_sub'] : "";
+ $bodytype = isset($row['body_type']) ? $row['body_type'] : "";
+ $physicalstatus = isset($row['physical_status']) ? $row['physical_status'] : "";
+ $drink = isset($row['drink']) ? $row['drink'] : "";
+ $smoke = isset($row['smoke']) ? $row['smoke'] : "";
+ $mothertounge = isset($row['mothertounge']) ? $row['mothertounge'] : "";
+ $bloodgroup = isset($row['blood_group']) ? $row['blood_group'] : "";
+ $weight = isset($row['weight']) ? $row['weight'] : "";
+ $height = isset($row['height']) ? $row['height'] : "";
+ $colour = isset($row['colour']) ? $row['colour'] : "";
+ $diet = isset($row['diet']) ? $row['diet'] : "";
+ $occupation = isset($row['occupation']) ? $row['occupation'] : "";
+ $occupationdescr = isset($row['occupation_descr']) ? $row['occupation_descr'] : "";
+ $fatheroccupation = isset($row['fatheroccupation']) ? $row['fatheroccupation'] : "";
+ 
+ $motheroccupation = isset($row['mothers_occupation']) ? $row['mothers_occupation'] : "";
+ $income = isset($row['annual_income']) ? $row['annual_income'] : "";
+ $bros = isset($row['no_bro']) ? $row['no_bro'] : "";
+ $sis = isset($row['no_sis']) ? $row['no_sis'] : "";
+ $aboutme = isset($row['aboutme']) ? $row['aboutme'] : "";
+
+
+
+
+
 
 //end of getting profile detils
 
@@ -68,11 +107,15 @@ $row=mysqli_fetch_assoc($result);
 $sql2="SELECT * FROM photos WHERE cust_id = $profileid";
 $result2 = mysqlexec($sql2);
 if($result2){
-	
- 	$pic1=$row2['pic1'];
-	$pic2=$row2['pic2'];
-	$pic3=$row2['pic3'];
-	$pic4=$row2['pic4']; 
+	$row2=mysqli_fetch_array($result2);
+	 $pic1 = isset($row2['pic1']) ? $row2['pic1'] : "";
+	  $pic2 = isset($row2['pic2']) ? $row2['pic2'] : "";
+	   $pic3 = isset($row2['pic3']) ? $row2['pic3'] : "";
+	    $pic4 = isset($row2['pic4']) ? $row2['pic4'] : "";
+	// $pic1=$row2['pic1'];
+	// $pic2=$row2['pic2'];
+	// $pic3=$row2['pic3'];
+	// $pic4=$row2['pic4'];
 }
 }else{
 	echo "<script>alert(\"Invalid Profile ID\")</script>";
@@ -150,10 +193,6 @@ $(document).ready(function(){
 					 </ul>
 				  </div>
 			</div>
-			
-			
-		
-			
 			<div class="col-sm-8 row_1">
 				<table class="table_working_hours">
 		        	<tbody>
@@ -161,8 +200,8 @@ $(document).ready(function(){
 							<td class="day_label">Name :</td>
 							<td class="day_value"><?php echo $fname . " " .$lname; ?></td>
 						</tr><tr class="opened_1">
-							<td class="day_label">Age / Height :</td>
-							<td class="day_value"><?php echo $age . " Years"; ?>/<?php echo $height . " Cm";?> </td>
+							<td class="day_label">Height :</td>
+							<td class="day_value"><?php echo $height . " Cm";?> </td>
 						</tr>
 					  	<tr class="opened">
 							<td class="day_label">Religion :</td>
@@ -170,7 +209,7 @@ $(document).ready(function(){
 						</tr>
 					    <tr class="opened">
 							<td class="day_label">Marital Status :</td>
-							<td class="day_value"><?php echo $marital_status;?></td>
+							<td class="day_value"><?php echo $maritalstatus;?></td>
 						</tr>
 					    <tr class="opened">
 							<td class="day_label">Country :</td>
@@ -221,8 +260,8 @@ $(document).ready(function(){
 								</tr>
 							    
 							    <tr class="opened">
-									<td class="day_label">Age / Height :</td>
-									<td class="day_value"><?php echo $age; ?>/<?php echo $height;?> cm</td>
+									<td class="day_label">Height :</td>
+									<td class="day_value"><?php echo $height;?> cm</td>
 								</tr>
 							    <tr class="opened">
 									<td class="day_label">Physical Status :</td>
@@ -232,20 +271,14 @@ $(document).ready(function(){
 									<td class="day_label">Profile Created by :</td>
 									<td class="day_value closed"><span><?php echo $profileby;?></span></td>
 								</tr>
-								<!--<tr class="opened">
-									<td class="day_label">Drink :</td>
-									<td class="day_value closed"><span><?php echo $drink;?></span></td>
-								</tr>  -->
+								
 						    </tbody>
 				          </table>
 				         </div>
 				         <div class="col-md-6 basic_1-left">
 				          <table class="table_working_hours">
 				        	<tbody>
-				        		<tr class="opened_1">
-									<td class="day_label">Age :</td>
-									<td class="day_value"><?php echo $age;?></td>
-								</tr>
+				        	
 							    <tr class="opened">
 									<td class="day_label">Mother Tongue :</td>
 									<td class="day_value"><?php echo $mothertounge;?></td>
@@ -266,10 +299,7 @@ $(document).ready(function(){
 									<td class="day_label">Diet :</td>
 									<td class="day_value closed"><span><?php echo $diet;?></span></td>
 								</tr>
-							   <!-- <tr class="closed">
-									<td class="day_label">Smoke :</td>
-									<td class="day_value closed"><span><?php //echo $smoke;?></span></td>
-								</tr>  -->
+							   
 						    </tbody>
 				        </table>
 				        </div>
@@ -286,7 +316,7 @@ $(document).ready(function(){
 								</tr>
 							    <tr class="opened">
 									<td class="day_label">
- of Birth :</td>
+ Date of Birth :</td>
 									<td class="day_value closed"><span><?php echo $dob;?></span></td>
 								</tr>
 							</tbody>
@@ -299,10 +329,10 @@ $(document).ready(function(){
 									<td class="day_label">Religion :</td>
 									<td class="day_value"><?php echo $religion;?></td>
 								</tr>
-							   <!-- <tr class="opened">
+							<!---    <tr class="opened">
 									<td class="day_label">Sub Caste :</td>
-									<td class="day_value"><?php //echo $subcaste;?></td>
-								</tr> -->
+									<td class="day_value"><?php echo $subcaste;?></td>
+								</tr>  -->
 							    
 							</tbody>
 				        </table>
@@ -324,7 +354,7 @@ $(document).ready(function(){
 								</tr>
 							    <tr class="opened">
 									<td class="day_label">Occupation Detail :</td>
-									<td class="day_value closed"><span><?php echo $occupation;?></span></td>
+									<td class="day_value closed"><span><?php echo $occupationdescr;?></span></td>
 								</tr>
 							    <tr class="opened">
 									<td class="day_label">Annual Income :</td>
@@ -371,40 +401,40 @@ $(document).ready(function(){
 //getting partner prefernce
 $sql = "SELECT * FROM partnerprefs WHERE custId = $id";
 $result = mysqlexec($sql);
-if($result){
 $row= mysqli_fetch_assoc($result);
 
-	$agemin= isset($row['agemin']) ? $row['agemin'] : "";
-	$agemax= isset($row['agemax']) ? $row['agemax'] : "";
-	$maritalstatus= isset($row['maritalstatus']) ? $row['maritalstatus'] : "";
-	$complexion= isset($row['complexion']) ? $row['complexion'] : "";
-	$height= isset($row['height']) ? $row['height'] : "";
-	$diet= isset($row['diet']) ? $row['diet'] : "";
-	$religion= isset($row['religion']) ? $row['religion'] : "";
-	$caste= isset($row['caste']) ? $row['caste'] : "";
-	$mothertounge= isset($row['mothertounge']) ? $row['mothertounge'] : "";
-	$education= isset($row['education']) ? $row['education'] : "";
-	$occupation= isset($row['occupation']) ? $row['occupation'] : "";
-	$country= isset($row['country']) ? $row['country'] : "";
-	$descr= isset($row['descr']) ? $row['descr'] : "";
+// $agemin=$row['agemin'];
+// $agemax=$row['agemax'];
+// $maritalstatus=$row['maritalstatus'];
+// $complexion=$row['complexion'];
+// $height=$row['height'];
+// $diet=$row['diet'];
+// $religion=$row['religion'];
+// $caste=$row['caste'];
+// $mothertounge=$row['mothertounge'];
+// $education=$row['education'];
+// $occupation=$row['occupation'];
+// $country=$row['country'];
+// $descr=$row['descr'];
 
-/* 
-$agemin=$row['agemin']; 
-$agemax=$row['agemax'];
-$maritalstatus=$row['maritalstatus'];
-$complexion=$row['complexion'];
-$height=$row['height'];
-$diet=$row['diet'];
-$religion=$row['religion'];
-$caste=$row['caste'];
-$mothertounge=$row['mothertounge'];
-$education=$row['education'];
-$occupation=$row['occupation'];
-$country=$row['country'];
-$descr=$row['descr'];
-*/
+    $agemin = isset($row['agemin']) ? $row['agemin'] : "";
+    $agemax = isset($row['agemax']) ? $row['agemax'] : "";
+    $maritalstatus = isset($row['maritalstatus']) ? $row['maritalstatus'] : "";
+    $complexion = isset($row['complexion']) ? $row['complexion'] : "";
+    $height = isset($row['height']) ? $row['height'] : "";
+    $diet = isset($row['diet']) ? $row['diet'] : "";
+    $religion = isset($row['religion']) ? $row['religion'] : "";
+    $caste = isset($row['caste']) ? $row['caste'] : "";
+    $mothertounge = isset($row['mothertounge']) ? $row['mothertounge'] : "";
+    $education = isset($row['education']) ? $row['education'] : "";
+    $occupation = isset($row['occupation']) ? $row['occupation'] : "";
+    $country = isset($row['country']) ? $row['country'] : "";
+    $descr = isset($row['descr']) ? $row['descr'] : "";
 
-}
+
+
+
+
 ?>
 				 <div role="tabpanel" class="tab-pane fade" id="profile1" aria-labelledby="profile-tab1">
 				    <div class="basic_1 basic_2">
@@ -459,10 +489,10 @@ $descr=$row['descr'];
 									<td class="day_label">Country of Residence :</td>
 									<td class="day_value closed"><span><?php echo $country;?></span></td>
 								</tr>
-								<tr class="opened">
+								<!--<tr class="opened">
 									<td class="day_label">State :</td>
 									<td class="day_value closed"><span><?php echo $state;?></span></td>
-								</tr>
+								</tr> -->
 								
 							 </tbody>
 				          </table>
@@ -480,7 +510,13 @@ $descr=$row['descr'];
 			  <input type="submit" value="Go">
 		   </form>
         </div> -->
-    
+     
+        </div>
+       <div class="clearfix"> </div>
+    </div>
+  </div>
+</div>
+
 <!-- FlexSlider -->
 <script defer src="js/jquery.flexslider.js"></script>
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />

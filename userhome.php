@@ -14,8 +14,7 @@ if(isloggedin()){
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Find Your Perfect Partner - Matrimony
- | User Home :: Matrimony
+<title>Home
 </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -27,14 +26,14 @@ if(isloggedin()){
 <script src="js/bootstrap.min.js"></script>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
-<link href='https://fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
 <!--font-Awesome-->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!--font-Awesome-->
 <script>
 $(document).ready(function(){
-    $(".dropdowncls").hover(            
+    $(".dropdown").hover(            
         function() {
             $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
             $(this).toggleClass('open');        
@@ -51,7 +50,7 @@ $(document).ready(function(){
 <!-- ============================  Navigation Start =========================== -->
  <?php include_once("includes/navigation.php");?>
 <!-- ============================  Navigation End ============================ -->
-<div class="grid_3"style="background-color: #cbf3f3;">
+<div class="grid_3" style="background-color:#cbf3f3;">
   <div class="container" style="
     background-size: cover;
     -webkit-background-size: cover;
@@ -67,44 +66,21 @@ $(document).ready(function(){
         <li class="current-page">User Home</li>
      </ul>
    </div>
-   
-   <div class="myclass" style="background-color: #cf7b7b;">
-        <ul class="nav navbar-nav nav_1">
-				<li class="">
-		              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile<span class="caret"></span></a>
-		              <ul class="dropdown-menu" role="menu">
-		               <li><a href="create_profile.php?id=<?php echo $id;?>">Create/Edit Profile</a></li>
-					    <li><a href="photouploader.php?id=<?php echo $id;?>">Upload Photos</a></li>
-		               <li><a href="view_profile.php?id=<?php echo $id;?>">View Profile</a></li>
-		                 
-		              </ul>
-		            </li>
-		            <li><a href="view_profile.php?id=<?php echo $id;?>">View Profile</a></li>
-		            <li><a href="partner_preference.php?id=<?php echo $id;?>">Partner Preference</a></li>
-		    		
-					<li class="">
-		              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search<span class="caret"></span></a>
-		              <ul class="dropdown-menu" role="menu">
-		                <li><a href="search.php">Regular Search</a></li>
-		                <li><a href="faq.php">Faq</a></li>
-		              </ul>
-		            </li>
-		        </ul>
-   </div>
-   
    <div class="navigation" style="background-color: #cf7b7b;"><!-- Innernavigation starts -->
    	
    	  	<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 		        <ul class="nav navbar-nav nav_1">
 				<li class="dropdown">
-		              <a href="" class="dropdown-toggle" data-toggle="dropdown">Profile<span class="caret"></span></a>
+		              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile<span class="caret"></span></a>
 		              <ul class="dropdown-menu" role="menu">
-					   <li><a href="create_profile.php?id=<?php echo $id;?>">Create/Edit Profile</a></li>
-		               <li><a href="photouploader.php?id=<?php echo $id;?>">Upload Photos</a></li>
-		               <li><a href="view_profile.php?id=<?php echo $id;?>">View Profile</a></li>
-		                 
+		
+		               <li><a href="create_profile.php?id=<?php echo $id;?>">Create Profile</a></li> 
+               <li><a href="photouploader.php?id=<?php echo $id;?>">Upload Photos</a></li>
+		               <li><a href="view_profile.php?id=<?php echo $id;?>">View Profile</a></li>					   
+		               <li><a href="updateprofile.php?id=<?php echo $id;?>">Update Profile</a></li>  
 		              </ul>
 		            </li>
+				
 		            <li><a href="view_profile.php?id=<?php echo $id;?>">View Profile</a></li>
 		            <li><a href="partner_preference.php?id=<?php echo $id;?>">Partner Preference</a></li>
 		    		

@@ -278,11 +278,14 @@ while ($row = mysqli_fetch_assoc($result))
    
   </div>
 </div>
+<!-- Match Right Starts -->
+<div class="col-md-3 match_right">
 
+</div>
+<!-- Match Right ends -->
      <div class="clearfix"> </div>
   </div>
 </div>
-
 
 
 <!-- FlexSlider -->

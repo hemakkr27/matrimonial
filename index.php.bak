@@ -3,7 +3,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Find Your Perfect Partner - Matrimony | Home :: 
+<title>Find Your Perfect Partner - code-projects.org | Home :: 
 </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -15,8 +15,8 @@
 <script src="js/bootstrap.min.js"></script>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
-<link href='https://fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
 <!--font-Awesome-->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!--font-Awesome-->
@@ -42,9 +42,13 @@ $(document).ready(function(){
 <div class="banner">
   <div class="container">
     <div class="banner_info">
-      <a href="login.php" class="hvr-shutter-out-horizontal">Login</a>
-      <a href="register.php" class="hvr-shutter-out-horizontal">Register</a>
+      
+      <a href="Login.php" class="hvr-shutter-out-horizontal">Login</a>
+      <a href="register.php" class="hvr-shutter-out-horizontal">Create your Profile</a>
     </div>
   </div>
  
 </div> 
+
+</body>
+</html>	

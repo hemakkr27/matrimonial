@@ -26,8 +26,8 @@ $result=search();
 <script src="js/bootstrap.min.js"></script>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
-<link href='https://fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
 <!----font-Awesome----->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!----font-Awesome----->
@@ -79,67 +79,60 @@ $(document).ready(function(){
 	 </div>
     </form>
  <div class="paid_people">
-   <h1>Profiles</h1>
+   
    <div class="row_1">
 <?php
   //only start display profiles if and only if search is triggered
- if(isset($_POST['search'])){
+  // if(isset($_POST['search'])){
 
- //code to print matching profiles
+  // //code to print matching profiles
 
-  // couloumn count
+  // // couloumn count
 
-   $c_count = '1';
+  // $c_count = '1';
 
-  while ($row = mysqli_fetch_assoc($result))
-     {
-       //getting photo for display
-	   
-	   $profid= isset($row['id']) ? $row['id'] : "";
-	   
-      // $profid=$row['id'];
-       $sql="SELECT * FROM photos WHERE cust_id=$profid";
-     $result2=mysqlexec($sql);
-       $photo=mysqli_fetch_assoc($result2);
-	   
-	   	   $pic= isset($photo['pic1']) ? $photo['pic1'] : "";
-	   
-	   
-      // $pic=$photo['pic1'];
-     // printing left side profile
-    
-     if ($c_count == '1')
-       {
-      echo "<div class=\"row_1\">"; //starting row
-       echo "<div class=\"col-sm-6 paid_people-left\">"; //left statrted
-       echo "<ul class=\"profile_item\">";
-      echo "<a href=\"view_profile.php?id=$profid\">";
-      echo "<li class=\"profile_item-img\"><img src=\"profile/". $profid."/".$pic ."\"" . "class=\"img-responsive\"" ;
-       echo "alt=\"\"/></li>";
-       echo "<li class=\"profile_item-desc\">";
-       echo "<h4>" . $row['firstname'] . " " . $row['lastname'] . "</h4>";
-       echo "<p>" . $row['age']. "Yrs," . $row['religion'] . "</p>";
-       echo "<h5>" . "View Full Profile" . "</h5>";
-       echo "</li>";
-       echo "</a>";
-      echo "</ul>";
-    echo "</div>"; //left end
-     $c_count++;
-      }
-      else
-      {
-      echo "<div class=\"col-sm-6\">"; //right statrted
+  // while ($row = mysqli_fetch_assoc($result))
+  //   {
+  //     //getting photo for display
+  //     $profid=$row['id'];
+  //     $sql="SELECT * FROM photos WHERE cust_id=$profid";
+  //     $result2=mysqlexec($sql);
+  //     $photo=mysqli_fetch_assoc($result2);
+  //     $pic=$photo['pic1'];
+  //   // printing left side profile
       
-      echo "</div>"; //right end
+  //   if ($c_count == '1')
+  //     {
+  //     echo "<div class=\"row_1\">"; //starting row
+  //     echo "<div class=\"col-sm-6 paid_people-left\">"; //left statrted
+  //     echo "<ul class=\"profile_item\">";
+  //     echo "<a href=\"view_profile.php?id=$profid\">";
+  //     echo "<li class=\"profile_item-img\"><img src=\"profile/". $profid."/".$pic ."\"" . "class=\"img-responsive\"" ;
+  //     echo "alt=\"\"/></li>";
+  //     echo "<li class=\"profile_item-desc\">";
+  //     echo "<h4>" . $row['firstname'] . " " . $row['lastname'] . "</h4>";
+  //     echo "<p>" . $row['age']. "Yrs," . $row['religion'] . "</p>";
+  //     echo "<h5>" . "View Full Profile" . "</h5>";
+  //     echo "</li>";
+  //     echo "</a>";
+  //     echo "</ul>";
+  //     echo "</div>"; //left end
+  //     $c_count++;
+  //     }
+  //     else
+  //     {
+  //     echo "<div class=\"col-sm-6\">"; //right statrted
+      
+  //     echo "</div>"; //right end
 
-      // end of right side
+  //     // end of right side
 
       
-     $c_count = '1';
-    }
-   } //loop end
-     echo "</div>"; //row end
-   }//end of if
+  //     $c_count = '1';
+  //     }
+  //   } //loop end
+  //   echo "</div>"; //row end
+  // }//end of if
 ?>
 	
   <div class="col-sm-6">
@@ -149,10 +142,12 @@ $(document).ready(function(){
    </div>   
   </div>
 </div>
+<div class="col-md-3 match_right">
 
-    
 </div>
-
+     <div class="clearfix"> </div>
+  </div>
+</div>
 
 
 

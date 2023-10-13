@@ -2,7 +2,7 @@
     	<div class="container">
     		<div class="col-md-4 col_2">
     			<h4>About Us</h4>
-    			<p>"projectworlds Free learning videos and free projects to Learn programming languages like C,C++,Java, PHP ,  Android,  Kotlin,  and other computer subjects like Data Structure, DBMS, SQL. etc"</p>
+    			<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."</p>
     		</div>
     		<div class="col-md-2 col_2">
     			<h4>Help & Support</h4>
@@ -32,23 +32,7 @@
     		</div>
     		<div class="clearfix"> </div>
     		<div class="copy">
-		      <p>Copyright © 2017 Marital . All Rights Reserved  | Design by <a href="http://projectworlds.in">projectworlds</a>
-</a> </p>
+		      <p>Copyright © 2017 Marital . All Rights Reserved  | Brought To You By <a href="http://code-projects.org" target="_blank">Code-Projects</a></p>
 	        </div>
     	</div>
 </div>
-</body>
-<?php include_once("footer.php");?>
-<!-- FlexSlider -->
-<script defer src="js/jquery.flexslider.js"></script>
-<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
-<script>
-// Can also be used with $(document).ready()
-$(window).load(function() {
-  $('.flexslider').flexslider({
-    animation: "slide",
-    controlNav: "thumbnails"
-  });
-});
-</script>   
-</html>

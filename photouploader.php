@@ -1,5 +1,4 @@
 <?php include_once("includes/basic_includes.php");?>
-<?php require_once("includes/dbconn.php");?>
 <?php include_once("functions.php"); ?>
 <?php
 
@@ -53,15 +52,8 @@ $(document).ready(function(){
 <!-- ============================  Navigation Start =========================== -->
 <?php include_once("includes/navigation.php");?>
 <!-- ============================  Navigation End ============================ -->
-<div class="grid_3" style="background-color: #cbf3f3;">
-  <div class="container" style="
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    min-height: 550px;
-    background-attachment: fixed;
-    background-position: center;">
+<div class="grid_3">
+  <div class="container">
    <div class="breadcrumb1">
      <ul>
         <a href="index.php"><i class="fa fa-home home_1"></i></a>
@@ -100,15 +92,6 @@ $(document).ready(function(){
 
 
 
-<!-- FlexSlider -->
-<script defer src="js/jquery.flexslider.js"></script>
-<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
-<script>
-// Can also be used with $(document).ready()
-$(window).load(function() {
-  $('.flexslider').flexslider({
-    animation: "slide",
-    controlNav: "thumbnails"
-  });
-});
-</script>   
+
+</body>
+</html>	

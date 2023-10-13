@@ -71,7 +71,9 @@ function writepartnerprefs($id){
 		$country=$_POST['country'];
 		$descr=$_POST['descr'];
 
-		$sql = "UPDATE partnerprefs SET
+		$sql = "UPDATE
+				   partnerprefs 
+				SET
 				   agemin = '$agemin',
 				   agemax='$agemax',
 				   maritalstatus = '$maritalstatus',
@@ -89,9 +91,7 @@ function writepartnerprefs($id){
 				   custId = '$id'";
 
 		$result = mysqlexec($sql);
-		
-		if($result){
-
+		if ($result) {
 			echo "<script>alert(\"Successfully updated Partner Preference\")</script>";
 			echo "<script> window.location=\"userhome.php?id=$id\"</script>";
 
@@ -104,33 +104,60 @@ function writepartnerprefs($id){
 }
 
 
-
 function register(){
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$uname=$_POST['name'];
 	$pass=$_POST['pass'];
 	$email=$_POST['email'];
-	$day=$_POST['day'];
-	$month=$_POST['month'];
-	$year=$_POST['year'];
-		$day=$_POST['day'];
-		$month=$_POST['month'];
-		$year=$_POST['year'];
-	$dob=$year ."-" . $month . "-" .$day ;
-	$gender=$_POST['gender'];
+	$phoneNumber=$_POST['phoneNumber'];
+	 $cpassword = $_POST['cpassword'];
+    // if($pass !== $cpassword){
+        // $errors['password'] = "Confirm password not matched!";
+    // }
+	
+		$phoneNumber = $_POST['phoneNumber']; // Replace with your form field name for phone number
+
+// Remove non-numeric characters
+$phoneNumber = preg_replace("/[^0-9]/", "", $phoneNumber);
+
+if (strlen($phoneNumber) === 10) {
+    // Valid 10-digit phone number
+    echo "Phone number is valid: " . $phoneNumber;
+} else {
+    // Invalid phone number
+    echo "Invalid phone number";
+}
+	
 	require_once("includes/dbconn.php");
 
-	$sql = "INSERT INTO users( profilestat, username, password, email, dateofbirth, gender, userlevel) 
-			VALUES(0, '$uname', '$pass', '$email', '$dob', '$gender', 0)";
+ if ($pass === $cpassword) { // Check if passwords match
+      
+
+	$sql = "INSERT 
+			INTO
+			   users
+			   ( profilestat, username, password, email, phoneNumber, userlevel) 
+			VALUES
+			   (0, '$uname', '$pass', '$email', '$phoneNumber', 0)";
 
 	if (mysqli_query($conn,$sql)) {
+		
+	
 	  echo "Successfully Registered";
 	  echo "<a href=\"login.php\">";
 	  echo "Login to your account";
 	  echo "</a>";
 	} else {
+		
+	
 	  echo "Error: " . $sql . "<br>" . $conn->error;
 	}
+
+}
+
+	else {
+            echo "Confirm password not matched!";
+        }
 }
 }
 
@@ -143,7 +170,6 @@ function isloggedin(){
 	}
 
 }
-
 
 
 function processprofile_form($id){
@@ -160,7 +186,7 @@ function processprofile_form($id){
 	
 	$religion=$_POST['religion'];
 	$caste = $_POST['caste'];
-	$subcaste=$_POST['subcaste'];
+	
 	
 	$country = $_POST['country'];
 	$state=$_POST['state'];
@@ -172,8 +198,7 @@ function processprofile_form($id){
 	$edudescr=$_POST['edudescr'];
 	$bodytype=$_POST['bodytype'];
 	$physicalstatus=$_POST['physicalstatus'];
-	$drink=$_POST['drink'];
-	$smoke=$_POST['smoke'];
+
 	$mothertounge=$_POST['mothertounge'];
 	$bloodgroup=$_POST['bloodgroup'];
 	$weight=$_POST['weight'];
@@ -194,7 +219,6 @@ function processprofile_form($id){
 	require_once("includes/dbconn.php");
 	$sql="SELECT cust_id FROM customer WHERE cust_id=$id";
 	$result=mysqlexec($sql);
-
 
 if(mysqli_num_rows($result)>=1){
 	//there is already a profile in this table for loggedin customer
@@ -240,20 +264,29 @@ if(mysqli_num_rows($result)>=1){
    	echo "<script>alert(\"Successfully Updated Profile\")</script>";
    	echo "<script> window.location=\"userhome.php?id=$id\"</script>";
    }
-}
-else{
+}else{
 	//Insert the data
-	$sql = "INSERT INTO customer  (cust_id, email, age, sex, religion, caste, subcaste, district, state, country, maritalstatus, profilecreatedby, education, education_sub, firstname, lastname, body_type, physical_status, drink, mothertounge, colour, weight, height, blood_group, diet, smoke,   dateofbirth, occupation, occupation_descr, annual_income, fathers_occupation, mothers_occupation, no_bro, no_sis, aboutme, profilecreationdate  ) 
-				VALUES ('$id','$email', '$age', '$sex', '$religion', '$caste', '$subcaste', '$district', '$state', '$country', '$maritalstatus', '$profileby', '$education', '$edudescr', '$fname', '$lname', '$bodytype', '$physicalstatus', '$drink', '$mothertounge', '$colour', '$weight', '$height', '$bloodgroup', '$diet', '$smoke', '$dob', '$occupation', '$occupationdescr', '$income', '$fatheroccupation', '$motheroccupation', '$bros', '$sis', '$aboutme', CURDATE())
+	$sql = "INSERT 
+				INTO
+				   customer
+				   (cust_id, email, age, sex, religion, caste, district, state, country, maritalstatus, 
+				   profilecreatedby, education, education_sub, firstname, lastname, body_type, physical_status, 
+				   mothertounge, colour, weight, height, blood_group, diet, dateofbirth, occupation, occupation_descr, annual_income, fathers_occupation, mothers_occupation, no_bro, no_sis, aboutme, profilecreationdate  ) 
+				VALUES
+				   ('$id','$email', '$age', '$sex', '$religion', '$caste', '$district', '$state', 
+				   '$country', '$maritalstatus', '$profileby', '$education', '$edudescr', '$fname', 
+				   '$lname', '$bodytype', '$physicalstatus', '$mothertounge', '$colour', '$weight', '$height', 
+				   '$bloodgroup', '$diet', '$dob', '$occupation', '$occupationdescr', '$income', '$fatheroccupation', '$motheroccupation', '$bros', '$sis', '$aboutme', CURDATE())
 			";
 	if (mysqli_query($conn,$sql)) {
+	  echo "Successfully Created profile";
 	  echo "<a href=\"userhome.php?id={$id}\">";
 	  echo "Back to home";
-	  echo "</a>";  
+	  echo "</a>";
 	  //creating a slot for partner prefernce table for prefs details with cust id
-	  $sql2="INSERT INTO partnerprefs (id, custId) VALUES(0, '$id')";
+	  $sql2="INSERT INTO partnerprefs (id, custId) VALUES('', '$id')";
 	  mysqli_query($conn,$sql2);
-	  //$sql3="UPDATE TABLE users SET profilestat=1 WHERE id=$id";
+	  $sql2="UPDATE TABLE users SET profilestat=1 WHERE id=$id";
 	} else {
 	  echo "Error: " . $sql . "<br>" . $conn->error;
 	}
@@ -288,7 +321,7 @@ $result = mysqlexec($sql);
 //code part to check weather a photo already exists
 if(mysqli_num_rows($result) == 0) {
      // no photo for curret user, do stuff...
-		$sql="INSERT INTO photos (id, cust_id, pic1, pic2, pic3, pic4) VALUES (0, '$id', '$pic1' ,'$pic2', '$pic3','$pic4')";
+		$sql="INSERT INTO photos (id, cust_id, pic1, pic2, pic3, pic4) VALUES ('', '$id', '$pic1' ,'$pic2', '$pic3','$pic4')";
 		// Writes the information to the database
 		mysqlexec($sql);
 
@@ -306,9 +339,6 @@ if(move_uploaded_file($_FILES['pic1']['tmp_name'], $target1)&&move_uploaded_file
 
 // Tells you if its all ok
 echo "The files has been uploaded, and your information has been added to the directory";
-  echo "<a href=\"view_profile.php?id={$id}\">";
-	  echo "Back to home";
-	  echo "</a>";
 }
 else {
 
