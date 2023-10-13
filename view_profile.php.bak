@@ -1,6 +1,8 @@
+
 <?php include_once("includes/basic_includes.php");?>
 <?php include_once("functions.php"); ?>
 <?php require_once("includes/dbconn.php");?>
+
 <?php
 if(isloggedin()){
  //do nothing stay here
@@ -14,46 +16,45 @@ $profileid=$id;
 
 //getting profile details from db
 $sql="SELECT * FROM customer WHERE cust_id = $id";
-$result = '';
-
 $result = mysqlexec($sql);
 if($result){
 $row=mysqli_fetch_assoc($result);
 
-	$fname=$row['firstname'];
-	$lname=$row['lastname'];
-	$sex=$row['sex'];
-	$email=$row['email'];
-	$dob=$row['dateofbirth'];
-	$religion=$row['religion'];
-	$caste = $row['caste'];
-	$subcaste=$row['subcaste'];
-	$country = $row['country'];
-	$state=$row['state'];
-	$district=$row['district'];
-	$age=$row['age'];
-	$maritalstatus=$row['maritalstatus'];
-	$profileby=$row['profilecreatedby'];
-	$education=$row['education'];
-	$edudescr=$row['education_sub'];
-	$bodytype=$row['body_type'];
-	$physicalstatus=$row['physical_status'];
-	$drink=$row['drink'];
-	$smoke=$row['smoke'];
-	$mothertounge=$row['mothertounge'];
-	$bloodgroup=$row['blood_group'];
-	$weight=$row['weight'];
-	$height=$row['height'];
-	$colour=$row['colour'];
-	$diet=$row['diet'];
-	$occupation=$row['occupation'];
-	$occupationdescr=$row['occupation_descr'];
-	$fatheroccupation=$row['fathers_occupation'];
-	$motheroccupation=$row['mothers_occupation'];
-	$income=$row['annual_income'];
-	$bros=$row['no_bro'];
-	$sis=$row['no_sis'];
-	$aboutme=$row['aboutme'];
+	$fname= isset($row['firstname']) ? $row['firstname'] : "";
+	$lname= isset($row['lname']) ? $row['lname'] : "";
+	$sex= isset($row['sex']) ? $row['sex'] : "";
+	$marital_status= isset($row['maritalstatus']) ? $row['maritalstatus'] : "";
+	$dob= isset($row['dateofbirth']) ? $row['dateofbirth'] : "";
+	$religion= isset($row['religion']) ? $row['religion'] : "";
+	$caste= isset($row['caste']) ? $row['caste'] : "";
+	$subcaste= isset($row['subcaste']) ? $row['subcaste'] : "";
+	$country= isset($row['country']) ? $row['country'] : "";
+	$state= isset($row['state']) ? $row['state'] : "";
+	$district= isset($row['district']) ? $row['district'] : "";
+	$age= isset($row['age']) ? $row['age'] : "";
+	$maritalstatus= isset($row['maritalstatus']) ? $row['maritalstatus'] : "";
+	$profileby= isset($row['profilecreatedby']) ? $row['profilecreatedby'] : "";
+	$education= isset($row['education']) ? $row['education'] : "";
+	$edudescr= isset($row['education_sub']) ? $row['education_sub'] : "";
+	$bodytype= isset($row['body_type']) ? $row['body_type'] : "";
+	$physicalstatus= isset($row['physical_status']) ? $row['physical_status'] : "";
+	$drink= isset($row['drink']) ? $row['drink'] : "";
+	$smoke= isset($row['smoke']) ? $row['smoke'] : "";
+	$mothertounge= isset($row['mothertounge']) ? $row['mothertounge'] : "";
+	$bloodgroup= isset($row['blood_group']) ? $row['blood_group'] : "";
+	$weight= isset($row['weight']) ? $row['weight'] : "";
+	$height= isset($row['height']) ? $row['height'] : "";
+	$colour= isset($row['colour']) ? $row['colour'] : "";
+	$diet= isset($row['diet']) ? $row['diet'] : "";
+	$occupation= isset($row['occupation']) ? $row['occupation'] : "";
+	$occupationdescr= isset($row['occupationdescr']) ? $row['occupationdescr'] : "";
+	$fatheroccupation= isset($row['fathers_occupation']) ? $row['fathers_occupation'] : "";
+	$motheroccupation= isset($row['mothers_occupation']) ? $row['mothers_occupation'] : "";
+	$income= isset($row['annual_income']) ? $row['annual_income'] : "";
+	
+	$bros= isset($row['no_bro']) ? $row['no_bro'] : "";
+	$sis= isset($row['no_sis']) ? $row['no_sis'] : "";
+	$aboutme= isset($row['aboutme']) ? $row['aboutme'] : "";
 
 //end of getting profile detils
 
@@ -67,11 +68,11 @@ $row=mysqli_fetch_assoc($result);
 $sql2="SELECT * FROM photos WHERE cust_id = $profileid";
 $result2 = mysqlexec($sql2);
 if($result2){
-	$row2=mysqli_fetch_array($result2);
-	$pic1=$row2['pic1'];
+	
+ 	$pic1=$row2['pic1'];
 	$pic2=$row2['pic2'];
 	$pic3=$row2['pic3'];
-	$pic4=$row2['pic4'];
+	$pic4=$row2['pic4']; 
 }
 }else{
 	echo "<script>alert(\"Invalid Profile ID\")</script>";
@@ -94,8 +95,8 @@ if($result2){
 <script src="js/bootstrap.min.js"></script>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
-<link href='https://fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
 <!--font-Awesome-->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!--font-Awesome-->
@@ -149,6 +150,10 @@ $(document).ready(function(){
 					 </ul>
 				  </div>
 			</div>
+			
+			
+		
+			
 			<div class="col-sm-8 row_1">
 				<table class="table_working_hours">
 		        	<tbody>
@@ -165,7 +170,7 @@ $(document).ready(function(){
 						</tr>
 					    <tr class="opened">
 							<td class="day_label">Marital Status :</td>
-							<td class="day_value"><?php echo $maritalstatus;?></td>
+							<td class="day_value"><?php echo $marital_status;?></td>
 						</tr>
 					    <tr class="opened">
 							<td class="day_label">Country :</td>
@@ -227,10 +232,10 @@ $(document).ready(function(){
 									<td class="day_label">Profile Created by :</td>
 									<td class="day_value closed"><span><?php echo $profileby;?></span></td>
 								</tr>
-								<tr class="opened">
+								<!--<tr class="opened">
 									<td class="day_label">Drink :</td>
 									<td class="day_value closed"><span><?php echo $drink;?></span></td>
-								</tr>
+								</tr>  -->
 						    </tbody>
 				          </table>
 				         </div>
@@ -261,10 +266,10 @@ $(document).ready(function(){
 									<td class="day_label">Diet :</td>
 									<td class="day_value closed"><span><?php echo $diet;?></span></td>
 								</tr>
-							    <tr class="closed">
+							   <!-- <tr class="closed">
 									<td class="day_label">Smoke :</td>
-									<td class="day_value closed"><span><?php echo $smoke;?></span></td>
-								</tr>
+									<td class="day_value closed"><span><?php //echo $smoke;?></span></td>
+								</tr>  -->
 						    </tbody>
 				        </table>
 				        </div>
@@ -294,10 +299,10 @@ $(document).ready(function(){
 									<td class="day_label">Religion :</td>
 									<td class="day_value"><?php echo $religion;?></td>
 								</tr>
-							    <tr class="opened">
+							   <!-- <tr class="opened">
 									<td class="day_label">Sub Caste :</td>
-									<td class="day_value"><?php echo $subcaste;?></td>
-								</tr>
+									<td class="day_value"><?php //echo $subcaste;?></td>
+								</tr> -->
 							    
 							</tbody>
 				        </table>
@@ -319,7 +324,7 @@ $(document).ready(function(){
 								</tr>
 							    <tr class="opened">
 									<td class="day_label">Occupation Detail :</td>
-									<td class="day_value closed"><span><?php echo $occupationdescr;?></span></td>
+									<td class="day_value closed"><span><?php echo $occupation;?></span></td>
 								</tr>
 							    <tr class="opened">
 									<td class="day_label">Annual Income :</td>
@@ -366,9 +371,25 @@ $(document).ready(function(){
 //getting partner prefernce
 $sql = "SELECT * FROM partnerprefs WHERE custId = $id";
 $result = mysqlexec($sql);
+if($result){
 $row= mysqli_fetch_assoc($result);
 
-$agemin=$row['agemin'];
+	$agemin= isset($row['agemin']) ? $row['agemin'] : "";
+	$agemax= isset($row['agemax']) ? $row['agemax'] : "";
+	$maritalstatus= isset($row['maritalstatus']) ? $row['maritalstatus'] : "";
+	$complexion= isset($row['complexion']) ? $row['complexion'] : "";
+	$height= isset($row['height']) ? $row['height'] : "";
+	$diet= isset($row['diet']) ? $row['diet'] : "";
+	$religion= isset($row['religion']) ? $row['religion'] : "";
+	$caste= isset($row['caste']) ? $row['caste'] : "";
+	$mothertounge= isset($row['mothertounge']) ? $row['mothertounge'] : "";
+	$education= isset($row['education']) ? $row['education'] : "";
+	$occupation= isset($row['occupation']) ? $row['occupation'] : "";
+	$country= isset($row['country']) ? $row['country'] : "";
+	$descr= isset($row['descr']) ? $row['descr'] : "";
+
+/* 
+$agemin=$row['agemin']; 
 $agemax=$row['agemax'];
 $maritalstatus=$row['maritalstatus'];
 $complexion=$row['complexion'];
@@ -381,9 +402,9 @@ $education=$row['education'];
 $occupation=$row['occupation'];
 $country=$row['country'];
 $descr=$row['descr'];
+*/
 
-
-
+}
 ?>
 				 <div role="tabpanel" class="tab-pane fade" id="profile1" aria-labelledby="profile-tab1">
 				    <div class="basic_1 basic_2">
@@ -459,42 +480,7 @@ $descr=$row['descr'];
 			  <input type="submit" value="Go">
 		   </form>
         </div> -->
-        <div class="view_profile view_profile2">
-        	<h3>View Recent Profiles</h3>
-    <?php
-     $sql="SELECT * FROM customer ORDER BY profilecreationdate ASC";
-      $result=mysqlexec($sql);
-      $count=1;
-      while($row=mysqli_fetch_assoc($result)){
-            $profid=$row['cust_id'];
-          //getting photo
-          $sql="SELECT * FROM photos WHERE cust_id=$profid";
-          $result2=mysqlexec($sql);
-          $photo=mysqli_fetch_assoc($result2);
-          $pic=$photo['pic1'];
-          echo "<ul class=\"profile_item\">";
-            echo"<a href=\"view_profile.php?id={$profid}\">";
-              echo "<li class=\"profile_item-img\"><img src=\"profile/". $profid."/".$pic ."\"" . "class=\"img-responsive\" alt=\"\"/></li>";
-               echo "<li class=\"profile_item-desc\">";
-                  echo "<h4>" . $row['firstname'] . " " . $row['lastname'] . "</h4>";
-                  echo "<p>" . $row['age']. "Yrs," . $row['religion'] . "</p>";
-                  echo "<h5>" . "View Full Profile" . "</h5>";
-               echo "</li>";
-      echo "</a>";
-      echo "</ul>";
-      $count++;
-      }
-     ?>
-           
-</div>
-       
-        </div>
-       <div class="clearfix"> </div>
-    </div>
-  </div>
-</div>
-
-<?php include_once("footer.php");?>
+    
 <!-- FlexSlider -->
 <script defer src="js/jquery.flexslider.js"></script>
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />

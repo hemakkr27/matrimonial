@@ -26,8 +26,8 @@ $result=search();
 <script src="js/bootstrap.min.js"></script>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
-<link href='//fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
-<link href='//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
 <!----font-Awesome----->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!----font-Awesome----->
@@ -94,11 +94,18 @@ $(document).ready(function(){
   while ($row = mysqli_fetch_assoc($result))
      {
        //getting photo for display
-       $profid=$row['id'];
+	   
+	   $profid= isset($row['id']) ? $row['id'] : "";
+	   
+      // $profid=$row['id'];
        $sql="SELECT * FROM photos WHERE cust_id=$profid";
      $result2=mysqlexec($sql);
        $photo=mysqli_fetch_assoc($result2);
-       $pic=$photo['pic1'];
+	   
+	   	   $pic= isset($photo['pic1']) ? $photo['pic1'] : "";
+	   
+	   
+      // $pic=$photo['pic1'];
      // printing left side profile
     
      if ($c_count == '1')
@@ -142,15 +149,12 @@ $(document).ready(function(){
    </div>   
   </div>
 </div>
-<div class="col-md-3 match_right">
-	<?php include_once("matchright.php");?>	
-</div>
-     <div class="clearfix"> </div>
-  </div>
+
+    
 </div>
 
 
-<?php include_once("footer.php");?>
+
 
 <!-- FlexSlider -->
 <link href="css/flexslider.css" rel='stylesheet' type='text/css' />

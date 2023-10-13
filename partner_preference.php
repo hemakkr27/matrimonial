@@ -14,6 +14,7 @@ writepartnerprefs($id);
 ///reading partnerprefs from db
 
 		$sql="SELECT * FROM partnerprefs WHERE custId = $id";
+		
 		$result=mysqlexec($sql);
 		if($result){
 			$row=mysqli_fetch_assoc($result);
@@ -239,4 +240,18 @@ $(document).ready(function(){
 </div>
 
 
-<?php include_once("footer.php");?>
+
+<!-- FlexSlider -->
+<script defer src="js/jquery.flexslider.js"></script>
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+<script>
+// Can also be used with $(document).ready()
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide",
+    controlNav: "thumbnails"
+  });
+});
+</script>   
+</body>
+</html>	

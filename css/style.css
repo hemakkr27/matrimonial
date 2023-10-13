@@ -14,6 +14,7 @@ body a{
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
+
 .header{
 	background:#999;
 	padding:2em 0;
@@ -289,16 +290,23 @@ ul.nav_1 li.last{
     color:#fff !important;
 }
 .banner{
-	background:url(../images/wed.jpg)no-repeat center top;
+	background:url(../images/wed1.jpg)no-repeat;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
 	-o-background-size:cover;
-	min-height:650px;
+	min-height:950px;
+	  background-attachment: fixed;
+  background-position: center; 
 }
 .banner_info{
-   margin: 10em 0 0 0;
+ 
+    margin: 36em 0px 1px 36em;
+
 }
+/* .banner_info{
+   margin: 10em 0 0 0;
+} */
 .banner_info h3{
    color:#fff;
    font-family: 'Oswald', sans-serif;
@@ -3518,3 +3526,19 @@ ul.feature_list.feature_list1 {
     margin-bottom: 1em;
 }
 }
+/* hema add css start*/
+
+  .myclass { display:none;}
+
+/* hema add css start*/
+/* hema add css start*/
+@media only screen and (max-width: 600px) {
+	
+
+  .myclass { display:block;
+  background-color: #cf7b7b;}
+  
+    .dropdowncls { display:block;
+  background-color: #cf7b7b;}
+}
+/* hema add css start*/

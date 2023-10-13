@@ -104,6 +104,7 @@ function writepartnerprefs($id){
 }
 
 
+
 function register(){
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$uname=$_POST['name'];
@@ -119,12 +120,8 @@ function register(){
 	$gender=$_POST['gender'];
 	require_once("includes/dbconn.php");
 
-	$sql = "INSERT 
-			INTO
-			   users
-			   ( profilestat, username, password, email, dateofbirth, gender, userlevel) 
-			VALUES
-			   (0, '$uname', '$pass', '$email', '$dob', '$gender', 0)";
+	$sql = "INSERT INTO users( profilestat, username, password, email, dateofbirth, gender, userlevel) 
+			VALUES(0, '$uname', '$pass', '$email', '$dob', '$gender', 0)";
 
 	if (mysqli_query($conn,$sql)) {
 	  echo "Successfully Registered";
@@ -152,7 +149,8 @@ function processprofile_form($id){
    
 	$fname=$_POST['fname'];
 	$lname=$_POST['lname'];
-	$sex=$_POST['sex'];
+		$sex= isset($row['sex']) ? $row['sex'] : "";
+ /*	$sex=$_POST['sex']; */
 	$email=$_POST['email'];
 	
 		$day=$_POST['day'];
@@ -160,26 +158,33 @@ function processprofile_form($id){
 		$year=$_POST['year'];
 	$dob=$year ."-" . $month . "-" .$day ;
 	
-	$religion=$_POST['religion'];
-	$caste = $_POST['caste'];
-	$subcaste=$_POST['subcaste'];
+	$religion=$_POST['caste_category'];
+	$caste = $_POST['cast_name'];
+	/*$subcaste= isset($row['subcaste']) ? $row['subcaste'] : "";*/
+	 $subcaste=$_POST['subcaste']; 
 	
 	$country = $_POST['country'];
 	$state=$_POST['state'];
 	$district=$_POST['district'];
-	$age=$_POST['age'];
-	$maritalstatus=$_POST['maritalstatus'];
+	/*	$age= isset($row['age']) ? $row['age'] : "";*/
+	 $age=$_POST['age']; 
+	
+		/*$maritalstatus= isset($row['maritalstatus']) ? $row['maritalstatus'] : "";*/
+	 $maritalstatus=$_POST['maritalstatus']; 
 	$profileby=$_POST['profileby'];
 	$education=$_POST['education'];
 	$edudescr=$_POST['edudescr'];
 	$bodytype=$_POST['bodytype'];
 	$physicalstatus=$_POST['physicalstatus'];
-	$drink=$_POST['drink'];
-	$smoke=$_POST['smoke'];
+		$drink= isset($row['drink']) ? $row['drink'] : "";
+		$smoke= isset($row['smoke']) ? $row['smoke'] : "";
+	/* $drink=$_POST['drink']; 
+	$smoke=$_POST['smoke'];  */
 	$mothertounge=$_POST['mothertounge'];
 	$bloodgroup=$_POST['bloodgroup'];
 	$weight=$_POST['weight'];
-	$height=$_POST['height'];
+			/*$height= isset($row['height']) ? $row['height'] : ""; */
+	 $height=$_POST['height']; 
 	$colour=$_POST['colour'];
 	$diet=$_POST['diet'];
 	$occupation=$_POST['occupation'];
@@ -236,19 +241,15 @@ if(mysqli_num_rows($result)>=1){
 		   aboutme = '$aboutme'
 		WHERE cust_id=$id; "
 		   ;
-   $result=mysql_query($sql);
+   $result=mysqlexec($sql);
    if ($result) {
    	echo "<script>alert(\"Successfully Updated Profile\")</script>";
    	echo "<script> window.location=\"userhome.php?id=$id\"</script>";
    }
 }else{
 	//Insert the data
-	$sql = "INSERT 
-				INTO
-				   customer
-				   (cust_id, email, age, sex, religion, caste, subcaste, district, state, country, maritalstatus, profilecreatedby, education, education_sub, firstname, lastname, body_type, physical_status, drink, mothertounge, colour, weight, height, blood_group, diet, smoke,   dateofbirth, occupation, occupation_descr, annual_income, fathers_occupation, mothers_occupation, no_bro, no_sis, aboutme, profilecreationdate  ) 
-				VALUES
-				   ('$id','$email', '$age', '$sex', '$religion', '$caste', '$subcaste', '$district', '$state', '$country', '$maritalstatus', '$profileby', '$education', '$edudescr', '$fname', '$lname', '$bodytype', '$physicalstatus', '$drink', '$mothertounge', '$colour', '$weight', '$height', '$bloodgroup', '$diet', '$smoke', '$dob', '$occupation', '$occupationdescr', '$income', '$fatheroccupation', '$motheroccupation', '$bros', '$sis', '$aboutme', CURDATE())
+	$sql = "INSERT INTO customer  (cust_id, email, age, sex, religion, caste, subcaste, district, state, country, maritalstatus, profilecreatedby, education, education_sub, firstname, lastname, body_type, physical_status, drink, mothertounge, colour, weight, height, blood_group, diet, smoke,   dateofbirth, occupation, occupation_descr, annual_income, fathers_occupation, mothers_occupation, no_bro, no_sis, aboutme, profilecreationdate  ) 
+				VALUES ('$id','$email', '$age', '$sex', '$religion', '$caste', '$subcaste', '$district', '$state', '$country', '$maritalstatus', '$profileby', '$education', '$edudescr', '$fname', '$lname', '$bodytype', '$physicalstatus', '$drink', '$mothertounge', '$colour', '$weight', '$height', '$bloodgroup', '$diet', '$smoke', '$dob', '$occupation', '$occupationdescr', '$income', '$fatheroccupation', '$motheroccupation', '$bros', '$sis', '$aboutme', CURDATE())
 			";
 	if (mysqli_query($conn,$sql)) {
 	  echo "Successfully Created profile";
@@ -311,6 +312,9 @@ if(move_uploaded_file($_FILES['pic1']['tmp_name'], $target1)&&move_uploaded_file
 
 // Tells you if its all ok
 echo "The files has been uploaded, and your information has been added to the directory";
+  echo "<a href=\"view_profile.php?id={$id}\">";
+	  echo "Back to home";
+	  echo "</a>";
 }
 else {
 

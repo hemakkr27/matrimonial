@@ -15,11 +15,13 @@ $result=mysqli_query($conn,$sql);
 
 // Mysql_num_row is counting table row
 $count=mysqli_num_rows($result);
-$row=mysqli_fetch_assoc($result);
-$id=$row['id'];
+// echo $count; exit;
+
+
 // If result matched $myusername and $mypassword, table row must be 1 row
 if($count==1){
-
+	$row=mysqli_fetch_assoc($result);
+$id=$row['id'];
 // Register $myusername, $mypassword and redirect to file "login_success.php"
 	$_SESSION['username']= $myusername;
 	$_SESSION['id']=$id;
@@ -29,7 +31,7 @@ if($count==1){
 		header("location:../admin.php");
 }
 else {
-echo "Wrong Username or Password";
-header('Location: ../login.php');
+	$_SESSION['error'] = "Wrong Username or Password";
+	header('Location: ../login.php');
 }
 ?>

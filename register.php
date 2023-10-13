@@ -41,7 +41,7 @@ $(document).ready(function(){
 <!-- ============================  Navigation Start =========================== -->
 <?php include_once("includes/navigation.php");?>
 <!-- ============================  Navigation End ============================ -->
-<div class="grid_3">
+<div class="grid_3" >
   <div class="container">
    <div class="breadcrumb1">
      <ul>
@@ -197,5 +197,4 @@ $(document).ready(function(){
 </div>
 
 
-<?php include_once("footer.php");?>
 
